@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "abraham",
+      "age": 30
+    },
+    {
+      "id": "2",
+      "name": "Dani",
+      "age": 30
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "message": "",
+      "userId": "1"
+    }
+  ]
+}
