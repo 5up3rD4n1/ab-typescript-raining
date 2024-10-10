@@ -68,3 +68,34 @@ tinder(people);
 mapping(people);
 */
 
+/**Functions */
+
+function oldPeople(array){
+    console.log(array.filter(a => a.age <= 21));
+}
+
+function cityFilter(array){
+    let newArray = array.filter(a => a.address.city != "Alajuela");
+    console.log(newArray);
+}
+
+function carloFilter(array){
+    let newArray = array.filter(a => a.name != "Carlo");
+    console.log(newArray);
+}
+
+function addressFilter(array){
+    let newArray = array.filter(a => a.address.address1.length <= 15);
+    console.log(newArray);
+}
+
+
+function filterOut(array, filter){
+    
+}
+
+filterOut(people);
+//addressFilter(people);
+//carloFilter(people);
+//cityFilter(people);
+//oldPeople(people);

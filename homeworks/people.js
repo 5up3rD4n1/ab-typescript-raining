@@ -35,6 +35,52 @@ const people = [
             city: "Alajuela",
             zipCode: "456821"
         }
+    }, {
+        name: "Carlo",
+        age: 23,
+        gender: "M",
+        address: {
+            address1: "Centro, Heredia",
+            city: "Heredia",
+            zipCode: "142578"
+        }
+    }, {
+        name: "Kristy",
+        age: 18,
+        gender: "F",
+        address: {
+            address1: "Barva, Heredia",
+            city: "Heredia",
+            zipCode: "254796"
+        }
+    }, {
+        name: "Kenneth",
+        age: 19,
+        gender: "M",
+        address: {
+            address1: "Belen, Heredia",
+            city: "Heredia",
+            zipCode: "784125"
+        }
+    }, {
+        name: "Rosa",
+        age: 19,
+        gender: "F",
+        address: {
+            address1: "Liberia, Guanacaste",
+            city: "Guanacaste",
+            zipCode: "459635"
+        }
+    }, {
+        name: "Marco",
+        age: 19,
+        gender: "F",
+        address: {
+            address1: "Samara, Guanacaste",
+            city: "Guanacaste",
+            zipCode: "326489"
+        }
     }
 ];
+
 module.exports = people;
