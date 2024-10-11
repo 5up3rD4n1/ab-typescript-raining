@@ -71,31 +71,37 @@ mapping(people);
 /**Functions */
 
 function oldPeople(array){
-    console.log(array.filter(a => a.age <= 21));
+    let newArray = array.filter(a => a.age <= 21);
+    return newArray;
 }
 
 function cityFilter(array){
     let newArray = array.filter(a => a.address.city != "Alajuela");
-    console.log(newArray);
+    return newArray;
 }
 
 function carloFilter(array){
     let newArray = array.filter(a => a.name != "Carlo");
-    console.log(newArray);
+    return newArray;
 }
 
 function addressFilter(array){
     let newArray = array.filter(a => a.address.address1.length <= 15);
-    console.log(newArray);
+    return newArray;
 }
 
 
-function filterOut(array, filter){
-    
+function filterOut(array){
+    resultArray = array;
+    for (let key in array){
+        if (array[key].name === "Carlo" || array[key].age <= 21 || array[key].address.city === "Alajuela" || array[key].address.address1.length <= 15 ){
+            resultArray = carloFilter(resultArray);
+            resultArray = oldPeople(resultArray);
+            resultArray = cityFilter(resultArray);
+            resultArray = addressFilter(resultArray);
+        } 
+    }
+    return resultArray;
 }
 
-filterOut(people);
-//addressFilter(people);
-//carloFilter(people);
-//cityFilter(people);
-//oldPeople(people);
+console.log(filterOut(people));

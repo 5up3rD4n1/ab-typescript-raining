@@ -37,7 +37,7 @@ const people = [
         }
     }, {
         name: "Carlo",
-        age: 23,
+        age: 15,
         gender: "M",
         address: {
             address1: "Centro, Heredia",
