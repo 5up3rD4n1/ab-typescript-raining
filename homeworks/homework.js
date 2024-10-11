@@ -1,6 +1,6 @@
 const people = require('./people')
 
-/**  Objects
+/** Objects
 
 const obj1 = {
     forma: "redondo",
@@ -13,21 +13,26 @@ const obj2 = {
 };
 
 const object = {...obj1, ...obj2};
+const newObj = {};
 
-console.log(object);
+for (let key in object){
+    newObj[`${key.toUpperCase()}`] = object[key];
+}
 
-function changeToUpperCase (value) {
-    const newObj = {};
-    for (let key in value) {  
-        newObj[key.toUpperCase()] = value[key];
-    }
-    console.log(newObj);
-};
+console.log(newObj);
 
-changeToUpperCase(object); 
-*/
+// function changeToUpperCase (value) {
+//     const newObj = {};
+//     for (let key in value) {  
+//         newObj[key.toUpperCase()] = value[key];
+//     }
+//     console.log(newObj);
+// };
 
-/** Arrays
+// changeToUpperCase(object);
+ */
+
+ /** Arrays
 
 function tinder(array) {
     let newArray = array.filter(a => a.gender == "F");
@@ -68,7 +73,8 @@ tinder(people);
 mapping(people);
 */
 
-/**Functions */
+/**Functions 
+ * 
 
 function oldPeople(array){
     let newArray = array.filter(a => a.age <= 21);
@@ -105,3 +111,9 @@ function filterOut(array){
 }
 
 console.log(filterOut(people));
+*/
+
+
+
+
+
