@@ -2,13 +2,13 @@
 // read/write a file (request any type of resource from the machine)
 // http request or network traffic
 
-const axios = require("axios");
+const axios = require('axios');
 
 function generatePromise() {
   return new Promise((resolve, reject) => {
     const value = Math.random();
 
-    console.log("THIS IS RUNNING");
+    console.log('THIS IS RUNNING');
     setTimeout(() => {
       if (value > 0.2) {
         resolve(value);
@@ -21,8 +21,8 @@ function generatePromise() {
 
 async function getUsers() {
   const result = await axios({
-    url: "http://localhost:3000/users",
-    method: "GET",
+    url: 'http://localhost:3000/users',
+    method: 'GET',
   });
 
   return result.data;
@@ -30,8 +30,8 @@ async function getUsers() {
 
 async function createUser(data) {
   const result = await axios({
-    url: "http://localhost:3000/users",
-    method: "POST",
+    url: 'http://localhost:3000/users',
+    method: 'POST',
     data,
   });
 
@@ -39,7 +39,7 @@ async function createUser(data) {
 }
 
 function generateProfile(num) {
-  return new Promise((r) => {
+  return new Promise(r => {
     const value = Math.random();
 
     const time = value * 10000;
@@ -137,7 +137,7 @@ async function main() {
   const users = await getUsers();
   console.log(users);
 
-  await createUser({ id: "2", name: "Dani", age: 30 });
+  await createUser({id: '2', name: 'Dani', age: 30});
 
   const users2 = await getUsers();
 

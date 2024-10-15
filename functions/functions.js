@@ -1,6 +1,5 @@
 // var fnName;
 
-
 // object
 // __proto__
 // prototype chain
@@ -18,22 +17,20 @@
  * @param {*} fn () => {}
  */
 function fnName(param1, fn) {
-  console.log({param1})
+  console.log({param1});
 }
 
 // hoistin
 // let
-const myFn2 = (param1, param2) => {
-
-}
+const myFn2 = (param1, param2) => {};
 
 // [key: value]
 // ["key": value]
 // []["1"] => =;
 const ob1 = {
-  name: "My name is OB1",
-  greeting: (name) => {
-    console.log(`Hello ${name}`)
+  name: 'My name is OB1',
+  greeting: name => {
+    console.log(`Hello ${name}`);
 
     console.log(this.name);
   },
@@ -41,25 +38,25 @@ const ob1 = {
   fn2: () => {
     // console.log(ob.name);
     console.log(this.name);
-  }
-}
+  },
+};
 
 // scopes, this
 
 const ob2 = {
-  name: "My name is OB2",
+  name: 'My name is OB2',
   greeting(cb) {
-    cb("Abraham")
+    cb('Abraham');
 
     console.log(this.name);
   },
 
-  fn: (cb) => {
-   const value = 1 * 4 * Math.random();
+  fn: cb => {
+    const value = 1 * 4 * Math.random();
 
-   cb(null, value);
-  }
-}
+    cb(null, value);
+  },
+};
 
 // ob1.greeting("Abraham");
 
@@ -70,29 +67,24 @@ const ob2 = {
 function testThis() {
   const greeting = (error, value) => {
     if (error) {
-      console.log('reventolio')
+      console.log('reventolio');
     }
-
 
     console.log(this.name);
     console.log(value);
-  }
+  };
 
   ob2.fn(greeting);
 
   ob2.fn((_, value) => {
-    console.log("This is from my anonimous fn", value);
+    console.log('This is from my anonimous fn', value);
   });
 }
 
-
 testThis();
 
-
 // fnName();
-
 
 // module.expors = {
 //   ob1
 // };
-

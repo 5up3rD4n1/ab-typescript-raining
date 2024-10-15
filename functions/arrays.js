@@ -15,7 +15,7 @@ const mapped = nums.map((item, index, arr) => {
 
 console.log(mapped);
 
-const filter = nums.filter((item) => {
+const filter = nums.filter(item => {
   return item % 2 === 0;
 });
 
@@ -51,9 +51,9 @@ const toObjectOfDouble = nums.reduce((acc, curr, index, arr) => {
 
 console.log(toObjectOfDouble);
 
-const ob1 = { hello: 1, value: true };
-const ob2 = { world: 2, value: false };
+const ob1 = {hello: 1, value: true};
+const ob2 = {world: 2, value: false};
 
 // merge 2 objects
-const ob3 = { value: null, ...ob1, ...ob2 };
+const ob3 = {value: null, ...ob1, ...ob2};
 console.log(ob3);
