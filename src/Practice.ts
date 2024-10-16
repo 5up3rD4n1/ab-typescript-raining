@@ -1,5 +1,15 @@
-function add(num1: number, num2: number){
-  return num1 + num2
-}
+const person: {
+  name: string;
+  age: number;
+  hobbies: Array<string>;
+} = {
+  name: 'Abraham',
+  age: 30,
+  hobbies: ['Sports', 'Cooking']
+};
 
-console.log(add(2,2))
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+};
