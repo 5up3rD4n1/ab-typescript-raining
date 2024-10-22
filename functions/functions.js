@@ -88,3 +88,59 @@ testThis();
 // module.expors = {
 //   ob1
 // };
+
+function prueba(a, b, operation) {
+  operation(a, b);
+}
+
+function plus(a, b) {
+  return a + b;
+}
+
+function minus(a, b) {
+  return a - b;
+}
+
+prueba(3, 1, plus);
+prueba(4, 3, minus);
+
+// wrapper
+function retry(cb, retries = 0) {
+  try {
+    const result = cb();
+
+    return result;
+  } catch (error) {
+    console.error(error);
+
+    if (retries > 2) {
+      throw error;
+    }
+
+    return retry(cb, retries + 1); // recursion
+  }
+}
+
+function sumWithRandom() {
+  const a = Math.random();
+  const b = Math.random();
+
+  const result = a + b;
+
+  if (result > 1) {
+    throw new Error('Num is bigger than 1');
+  }
+
+  return result;
+}
+
+retry(sumWithRandom);
+
+function suma(num1, num2, cb) {
+  const result = num1 + num2;
+  cb(result);
+}
+
+suma(2, 2, res => {
+  console.log(res);
+});
