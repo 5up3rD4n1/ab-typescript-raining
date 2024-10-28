@@ -79,3 +79,27 @@ console.log(multipyPrice(products));
 // console.log(newArray);
 
 */
+
+/* Create a function that recevies the category as parameter and filters all products of that specific category
+
+
+// function receiveCategory<T extends Product>(param : Array<T>): Array<T> {
+//     let newArray = param.filter((a) => a.category === "Fruit");
+//     return newArray;
+// };
+
+// console.log(receiveCategory(products));
+
+
+function filterCategory(category: string): Product[] {
+    return products.filter(product => product.category === category);
+}
+
+const vegetable = filterCategory("Vegetable");
+console.log("Vegetable Products:", vegetable);
+
+const fruit = filterCategory("Fruit");
+console.log("Fruit Products:", fruit);
+
+*/
+
