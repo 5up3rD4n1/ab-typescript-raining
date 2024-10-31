@@ -62,7 +62,7 @@ interface Product {
     },
 ];
 
-/* Create a new list with all product multipliying price by 2
+/* Create a new list with all product multipliying price by 2 
 function multipyPrice<T extends Product>(products : Array<T>): Array<T> {
     const newArray: Array<T> = []
     for (const product of products){
@@ -77,29 +77,42 @@ console.log(multipyPrice(products));
 
 // const newArray: Array<Product> = products.map(products => {return{...products, price: products.price * 2}});
 // console.log(newArray);
-
 */
 
-/* Create a function that recevies the category as parameter and filters all products of that specific category
+
+/* Create a function that recevies the category as parameter and filters all products of that specific category 
 
 
-// function receiveCategory<T extends Product>(param : Array<T>): Array<T> {
-//     let newArray = param.filter((a) => a.category === "Fruit");
-//     return newArray;
-// };
+function receiveCategory<T extends Product>(param : Array<T>): Array<T> {
+    let newArray = param.filter((a) => a.category === "Fruit");
+    return newArray;
+};
 
-// console.log(receiveCategory(products));
+console.log(receiveCategory(products));
 
+// function filterCategory(category: string): Product[] {
+//     return products.filter(product => product.category === category);
+// }
 
-function filterCategory(category: string): Product[] {
-    return products.filter(product => product.category === category);
+// const vegetable = filterCategory("Vegetable");
+// console.log("Vegetable Products:", vegetable);
+
+// const fruit = filterCategory("Fruit");
+// console.log("Fruit Products:", fruit);
+*/
+
+function groupByCategory(products: Product[]){
+  return products.reduce((acc: Record<string, Product[]>, product: Product) => {
+    const { category } = product;
+  
+    if (!acc[category]) {
+        acc[category] = [];
+    }
+  
+    acc[category].push(product);
+    return acc;
+  },{} as Record<string, Product[]>)
 }
 
-const vegetable = filterCategory("Vegetable");
-console.log("Vegetable Products:", vegetable);
-
-const fruit = filterCategory("Fruit");
-console.log("Fruit Products:", fruit);
-
-*/
+console.log(groupByCategory(products))
 
