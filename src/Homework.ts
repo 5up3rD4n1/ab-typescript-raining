@@ -99,6 +99,7 @@ console.log(receiveCategory(products));
 // console.log("Fruit Products:", fruit);
 */
 
+/*
 function groupByCategory(products: Product[]) {
   return products.reduce(
     (acc: Record<string, Product[]>, product: Product) => {
@@ -116,3 +117,5 @@ function groupByCategory(products: Product[]) {
 }
 
 console.log(groupByCategory(products));
+*/
+
