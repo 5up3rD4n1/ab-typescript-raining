@@ -1,68 +1,68 @@
 interface Product {
-    name: string;
-    category: string;
-    count: number;
-    price: number;
-  }
+  name: string;
+  category: string;
+  count: number;
+  price: number;
+}
 
-  const products: Product [] = [
-    {
+const products: Product[] = [
+  {
     name: 'Potatoes',
-    category: "Vegetable",
+    category: 'Vegetable',
     count: 105,
     price: 15,
-    },
-    {
+  },
+  {
     name: 'Tomatoes',
-    category: "Vegetable",
+    category: 'Vegetable',
     count: 200,
     price: 25,
-    },
-    {
+  },
+  {
     name: 'Apples',
-    category: "Fruit",
+    category: 'Fruit',
     count: 75,
     price: 35,
-    },
-    {
+  },
+  {
     name: 'Bananas',
-    category: "Fruit",
+    category: 'Fruit',
     count: 370,
     price: 10,
-    },
-    {
+  },
+  {
     name: 'Carrot',
-    category: "Vegetable",
+    category: 'Vegetable',
     count: 105,
     price: 20,
-    },
-    {
+  },
+  {
     name: 'Lemon',
-    category: "Fruit",
+    category: 'Fruit',
     count: 300,
     price: 12,
-    },
-    {
+  },
+  {
     name: 'Onion',
-    category: "Vegetable",
+    category: 'Vegetable',
     count: 95,
     price: 5,
-    },
-    {
+  },
+  {
     name: 'Pear',
-    category: "Fruit",
+    category: 'Fruit',
     count: 150,
     price: 17,
-    },
-    {
+  },
+  {
     name: 'Pumpkin',
-    category: "Vegetable",
+    category: 'Vegetable',
     count: 80,
     price: 55,
-    },
+  },
 ];
 
-/* Create a new list with all product multipliying price by 2 
+/* Create a new list with all product multipliying price by 2
 function multipyPrice<T extends Product>(products : Array<T>): Array<T> {
     const newArray: Array<T> = []
     for (const product of products){
@@ -76,11 +76,9 @@ function multipyPrice<T extends Product>(products : Array<T>): Array<T> {
 console.log(multipyPrice(products));
 
 // const newArray: Array<Product> = products.map(products => {return{...products, price: products.price * 2}});
-// console.log(newArray);
-*/
+// console.log(newArray);*/
 
-
-/* Create a function that recevies the category as parameter and filters all products of that specific category 
+/* Create a function that recevies the category as parameter and filters all products of that specific category
 
 
 function receiveCategory<T extends Product>(param : Array<T>): Array<T> {
@@ -101,18 +99,20 @@ console.log(receiveCategory(products));
 // console.log("Fruit Products:", fruit);
 */
 
-function groupByCategory(products: Product[]){
-  return products.reduce((acc: Record<string, Product[]>, product: Product) => {
-    const { category } = product;
-  
-    if (!acc[category]) {
+function groupByCategory(products: Product[]) {
+  return products.reduce(
+    (acc: Record<string, Product[]>, product: Product) => {
+      const {category} = product;
+
+      if (!acc[category]) {
         acc[category] = [];
-    }
-  
-    acc[category].push(product);
-    return acc;
-  },{} as Record<string, Product[]>)
+      }
+
+      acc[category].push(product);
+      return acc;
+    },
+    {} as Record<string, Product[]>,
+  );
 }
 
-console.log(groupByCategory(products))
-
+console.log(groupByCategory(products));
