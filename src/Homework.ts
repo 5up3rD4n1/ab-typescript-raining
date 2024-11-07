@@ -119,3 +119,21 @@ function groupByCategory(products: Product[]) {
 console.log(groupByCategory(products));
 */
 
+function groupByCategory(products: Product[]) {
+  return products.reduce(
+    (acc: Record<string, Product[]>, product: Product) => {
+      const {category} = product;
+      const {price} = product;
+ 
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+
+      acc[category].push(product);
+      return acc;
+    },
+    {} as Record<string, Product[]>,
+  );
+}
+
+console.log(groupByCategory(products));
