@@ -1,5 +1,3 @@
-import { access } from "fs";
-
 interface Product {
   name: string;
   category: string;
