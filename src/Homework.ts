@@ -1,3 +1,6 @@
+import { count } from "console";
+import { access } from "fs";
+
 interface Product {
   name: string;
   category: string;
@@ -118,7 +121,6 @@ console.log(receiveCategory(products));*/
 //   return products.reduce(
 //     (acc: Record<string, Product[]>, product: Product) => {
 //       const {category} = product;
-//       console.log(acc);
 //       if (!acc[category]) {
 //         acc[category] = [];
 //       }
@@ -145,12 +147,12 @@ console.log(receiveCategory(products));*/
 
 /**5. Create a function that returns the names of products which stock is lower than 5 items  */
 
-function lowStock(products: Product[]) {
-  products.forEach(stock => {
-    if (stock.count < 5) {
-      console.log(stock.name);
-    }
-  });
-}
+// function lowStock(products: Product[]) {
+//   products.forEach(stock => {
+//     if (stock.count < 5) {
+//       console.log(stock.name);
+//     }
+//   });
+// }
 
-lowStock(products);
+// lowStock(products);
