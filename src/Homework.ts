@@ -1,5 +1,6 @@
 import { count } from "console";
 import { access } from "fs";
+import { validateHeaderValue } from "http";
 
 interface Product {
   name: string;
@@ -156,3 +157,18 @@ console.log(receiveCategory(products));*/
 // }
 
 // lowStock(products);
+
+function twoSum(nums: number[], target: number): number[] {
+  let arr: number[] = [];
+  for (let i = 0; i < nums.length; i++) {
+      for (let j = i + 1; j < nums.length; j++) {
+          if (nums[i] + nums[j] === target) {
+              arr.push(i, j);
+              return arr;
+          }
+      }
+  }
+  return arr;
+}
+
+console.log(twoSum([3,3], 6)); // Output: [0, 1]
